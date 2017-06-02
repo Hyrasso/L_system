@@ -4,7 +4,7 @@ function LSystem(rules, start, iterations) {
 		var step = "";
 		var l = start.length;
 		for(var i=0;i<start.length;i++) {
-			var c = start.charAt(i)
+			var c = start.charAt(i);
 			if(c in rules) {
 				step = step + rules[c];
 			} else {

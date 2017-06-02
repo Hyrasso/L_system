@@ -2,12 +2,9 @@
 var functions, args, string, trans, sc, input, cnv, start, rules, iterations;
 
 function setup() {
-	cnv = createCanvas(windowWidth, windowHeight*.8);
+	createCanvas(innerWidth, innerHeight);
+
 	start = "AAAA";
-	input = createInput(start);
-	var btn = createButton('Reset aff');
-	btn.mousePressed(function(event){sc = 1, trans=createVector(width/2, height/2);})
-	input.input(inputcb);
 	rules = {"X" : "[F+F+F+F[---X-Y]+++++F++++++++F-F-F-F]",
 				 "A" : "X+X+X+X+X+X+",
 				 "Y" : "[F+F+F+F[---Y]+++++F++++++++F-F-F-F]"};
@@ -76,10 +73,4 @@ function keyPressed(key) {
 		trans = createVector(width/2, height/2);
 		sc = 1;
 	}
-}
-
-function inputcb() {
-	start = this.elt.value
-	string = LSystem(rules, start, iterations);
-	console.log(string);
 }
